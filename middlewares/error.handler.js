@@ -1,11 +1,11 @@
+const logger = require('../utils/logging');
+
 function logErrors(err, req, res, next) {
-  console.log('LogErrors');
-  console.log(err);
+  logger.error(err);
   next(err);
 }
 
 function errorHandler(err, req, res, next) {
-  console.log('errorHandler');
   res.status(500).json({
     message: err.message,
     stack: err.stack,

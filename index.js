@@ -1,6 +1,7 @@
 const express = require('express');
 const routerApi = require('./routes');
 const cors = require('cors');
+const logger = require('./utils/logging');
 
 const {
   errorHandler,
@@ -22,5 +23,5 @@ app.use(boomErrorHandler);
 app.use(errorHandler);
 
 app.listen(port, () => {
-  console.log(`Running on http://localhost:${port}`);
+  logger.info(`Running on http://localhost:${port}`);
 });
