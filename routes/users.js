@@ -48,7 +48,7 @@ router.post(
 router.patch(
   '/:id',
   validationHandler(getUserSchema, 'params'),
-  validationHandler(createUserSchema, 'body'),
+  validationHandler(updateUserSchema, 'body'),
   async (req, res, next) => {
     try {
       const body = req.body;
